@@ -1,0 +1,16 @@
+{
+    "name": "qmates/corporate-hotel-booking",
+    "description": "see https://www.codurance.com/katas/corporate-hotel-booking",
+    "type": "library",
+    "require": {
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.6"
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Qmates\\CorporateHotelBooking\\": "src/"
+        }
+    }
+}
