@@ -9,7 +9,13 @@ Kata from codurance.com, see https://www.codurance.com/katas/corporate-hotel-boo
 Install project dependencies with
 
 ```
-$ ./composer.phar .... (to be completed)
+$ ./composer.phar install
+```
+
+Run the tests with
+
+```
+$ ./composer.phar exec phpunit ./tests
 ```
 
 ### VSCode Dev Container setup

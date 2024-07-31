@@ -1,0 +1,5 @@
+<phpunit testdox="true" colors="true">
+<testsuite name='Name your suite'>
+    <directory suffix='.php'>./tests</directory>
+</testsuite>
+</phpunit>
