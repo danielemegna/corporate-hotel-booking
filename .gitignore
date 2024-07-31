@@ -1,1 +1,6 @@
-/vendor/
+# Composer
+/vendor
+
+# PHPUnit
+/.phpunit.cache
+.phpunit.result.cache
