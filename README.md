@@ -55,7 +55,7 @@ In order to proceed, install the [related extension](https://marketplace.visuals
 If you want to open an additional bash session in the vscode container:
 
 ```
-$ docker exec -it -w /workspaces/$(basename $PWD) corporate-hotel bash
+$ docker exec -it -w /workspaces/$(basename $PWD) vsc-corporate-hotel bash
 # ./composer.phar install
 # ./composer.phar exec ....
 ```
