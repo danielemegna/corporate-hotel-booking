@@ -13,13 +13,12 @@ class AcceptanceTest extends TestCase {
         $this->hotelBookingSystem = new HotelBookingSystem();
     }
 
-
     /** @test */
     public function doubleRoomBookingHappyPath() {
         $hotelId = $this->givenAnHotel();
 
-        $checkinDate = DateTime::createFromFormat('d/m/Y', '23/05/2013');
-        $checkoutDate = DateTime::createFromFormat('d/m/Y', '24/05/2013');
+        $checkinDate = $this->date('23/05/2013');
+        $checkoutDate = $this->date('24/05/2013');
 
         $booking = $this->tryToBookRoom($hotelId, "DOUBLE_ROOM", $checkinDate, $checkoutDate);
 
@@ -28,8 +27,8 @@ class AcceptanceTest extends TestCase {
 
     /** @test */
     public function hotelNotExisting() {
-        $checkinDate = DateTime::createFromFormat('d/m/Y', '23/05/2013');
-        $checkoutDate = DateTime::createFromFormat('d/m/Y', '24/05/2013');
+        $checkinDate = $this->date('23/05/2013');
+        $checkoutDate = $this->date('24/05/2013');
 
         $booking = $this->tryToBookRoom("notExistingHotel", "DOUBLE_ROOM", $checkinDate, $checkoutDate);
 
@@ -43,5 +42,10 @@ class AcceptanceTest extends TestCase {
 
     private function tryToBookRoom($hotelId, $roomType, $checkinDate, $checkoutDate): ?string {
         return $this->hotelBookingSystem->bookRoom($hotelId, $roomType, $checkinDate, $checkoutDate);
+    }
+
+    private function date(string $dateString): DateTime
+    {
+        return DateTime::createFromFormat('d/m/Y', $dateString);
     }
 }
