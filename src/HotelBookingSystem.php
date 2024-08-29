@@ -1,27 +1,26 @@
 <?php
+
 namespace Qmates\CorporateHotelBooking;
+
 class HotelBookingSystem
 {
+    /** @var string[] */
+    private $storedHotelIds = [];
 
-    /**
-     * @var string
-     */
-    private $hotelId;
-
-    public function __construct()
-    {
-    }
-
-    public function bookRoom($hotelId, $roomType, $checkinDate, $checkoutDate): ?string
-    {
-        if ($this->hotelId == null) {
+    public function bookRoom($hotelId, $roomType, $checkinDate, $checkoutDate): ?string {
+        if (!$this->hotelIdExists($hotelId)) {
             return null;
         }
+
         return "bookingConfirmationId";
     }
 
-    public function addHotel(string $hotelId, string $hotelName)
-    {
-        $this->hotelId = $hotelId;
+    public function addHotel(string $hotelId, string $hotelName): void {
+        $this->storedHotelIds[] = $hotelId;
+    }
+
+    private function hotelIdExists(string $hotelId): bool {
+        return in_array($hotelId, $this->storedHotelIds);
     }
 }
+

@@ -27,6 +27,8 @@ class AcceptanceTest extends TestCase {
 
     /** @test */
     public function hotelNotExisting() {
+        $hotelId = $this->givenAnHotel();
+
         $checkinDate = $this->date('23/05/2013');
         $checkoutDate = $this->date('24/05/2013');
 
@@ -49,3 +51,4 @@ class AcceptanceTest extends TestCase {
         return DateTime::createFromFormat('d/m/Y', $dateString);
     }
 }
+
